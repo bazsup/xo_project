@@ -49,4 +49,7 @@ ${BROWSER}     chrome
 แสดงผล ผู้ชนะ
     Wait Until Element Contains     id=play
 
+แสดงผล การเสมอ
+    Wait Until Element Contains     id=tie
+
 # ขึ้นคำถามจะเล่นต่อหรือไม่?
