@@ -3,7 +3,7 @@ Library           SeleniumLibrary
 Suite Teardown    Close Browser
 
 *** Variables ***
-${URL}         http://localhost:3000/webapp/xo.jsp
+${URL}         http://localhost:8080/XO-Project/index.jsp
 ${BROWSER}     chrome
 
 *** Keywords ***
