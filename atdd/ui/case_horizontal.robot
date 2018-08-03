@@ -4,12 +4,7 @@ Resource          resource.robot
 Suite Teardown    Close Browser
 
 *** Test Cases ***
-<<<<<<< HEAD
-Player 1 ชนะแนวนอนแถวที่ 2
-    #หลังจากเปิดเกม คนเล่นคนแรกคือ Player1 เสมอ ตามด้วย Player2 สลับกันไป
-=======
 Player 1 ชนะแนวนอนแถวที่ 1
->>>>>>> 387a1fa649bc4682fd957e9a56567be1ac52fd89
     เปิดหน้าเกม XO
     #Player 1
     คลิ๊กตำแหน่ง แถว 1 คอลั่ม 1
