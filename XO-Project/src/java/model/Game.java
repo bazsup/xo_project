@@ -13,7 +13,29 @@ public class Game {
 
     Player player1;
     Player player2;
+    int tie = 0;
 
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    public Player getPlayer2() {
+        return player2;
+    }
+    
+    
+
+    public int getTie() {
+        return tie;
+    }
+
+    public void setTie(int tie) {
+        this.tie = tie;
+    }
+    
+    public void resetScoreTie(){
+        this.tie = 0;
+    }
     // char พื้นฐานเป็น 0
     char board[][];
     char currentPlayer = 'x';
@@ -30,6 +52,21 @@ public class Game {
         this.player1 = new Player();
         this.player2 = new Player();
         createBoard();
+    }
+    
+    public boolean isFully(char board[][]){
+        for (int row = 0; row <3 ; row++) {
+            for (int col = 0; col < 3; col++) {
+                if(board[row][col]==0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    public void resetScore(){
+        
     }
 
     public void createBoard() {
@@ -99,6 +136,22 @@ public class Game {
         }
     }
 
+
+  public boolean checkVertical(char symbol) {
+    if(board[0][0] == symbol &&
+      board[1][0] == symbol &&
+      board[2][0] == symbol
+    ){
+      return true;
+    } else if (board[0][1] == symbol &&
+      board[1][1] == symbol &&
+      board[2][1] == symbol) {
+      return true;
+    } else if (board[0][2] == symbol &&
+      board[1][2] == symbol &&
+      board[2][2] == symbol) {
+      return true;
+
     // Servelet
     public static void main(String[] args) {
         Game game = new Game();
@@ -110,5 +163,7 @@ public class Game {
         game.addSymbol(0, 2); //x
         game.checkHorizontal();
     }
+    return false;
+  }
 
 }
