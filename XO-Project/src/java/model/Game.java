@@ -18,6 +18,14 @@ public class Game {
     char board[][];
     char currentPlayer = 'x';
 
+    public char getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(char currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
+
 
     public Game() {
         this.player1 = new Player();
@@ -74,14 +82,6 @@ public class Game {
         return result;
     }
 
-    public char getCurrentPlayer() {
-        return currentPlayer;
-    }
-
-    public void setCurrentPlayer(char currentPlayer) {
-        this.currentPlayer = currentPlayer;
-    }
-
     public void changePlayer() {
         if (currentPlayer == 'o') {
             setCurrentPlayer('x');
@@ -89,7 +89,7 @@ public class Game {
             setCurrentPlayer('o');
         }
     }
-
+    
     // Servelet
     public static void main(String[] args) {
 
