@@ -11,6 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.Game;
 
 /**
  *
@@ -29,19 +31,28 @@ public class GameServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet GameServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet GameServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String input_row = request.getParameter("row");
+        String input_col = request.getParameter("col");
+        HttpSession session = request.getSession(true);
+        if(session.getAttribute("game") == null){
+            session.setAttribute("game", new Game());
         }
+        
+        Game start = (Game) session.getAttribute("game");
+
+        if (input_row != null || input_col != null) {
+            try {
+            int row = Integer.parseInt(input_row);
+            int col = Integer.parseInt(input_col);
+            request.getSession().setAttribute("message", "row : "+row+" column : "+col);
+            } catch (Exception e) {
+                request.getSession().setAttribute("message", "กรุณาตอบใหม่ ");
+            }
+        }
+        
+        
+
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

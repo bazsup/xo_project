@@ -13,13 +13,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import model.Game;
+
 /**
  *
  * @author bank2
  */
 public class GameTest {
+
     Game newGame;
-    
 
     public GameTest() {
     }
@@ -44,11 +45,18 @@ public class GameTest {
      * Test of checkDiagonal method, of class Game.
      */
     @Test
-    public void testCheckDiagonal() {
+    public void testCheckDiagonalLeftToRight() {
         Game g = new Game();
         g.addSymbol(0, 0);
         g.addSymbol(1, 1);
         g.addSymbol(2, 2);
+        assertEquals(true, g.checkDiagonal());
+    }
+    public void testCheckDiagonalRightToLeft() {
+        Game g = new Game();
+        g.addSymbol(0, 2);
+        g.addSymbol(1, 1);
+        g.addSymbol(2, 0);
         assertEquals(true, g.checkDiagonal());
     }
 
@@ -58,7 +66,7 @@ public class GameTest {
         g.addSymbol(0, 0);
         assertEquals('x', g.getSymBolFromBoard(0, 0));
     }
-    
+
     @Test
     public void testChangePlayer() {
         Game game = new Game();
@@ -66,11 +74,10 @@ public class GameTest {
 
         game.changePlayer();
         assertEquals(game.currentPlayer, 'o');
-        
+
         game.changePlayer();
         assertEquals(game.currentPlayer, 'x');
     }
-    
 
     @Test
     public void checkSymbolVertical_column1_shouldbeTrue() {
@@ -81,6 +88,25 @@ public class GameTest {
       char symbol = game.getCurrentPlayer();
       boolean actual = game.checkVertical(symbol);
       assertTrue(actual);
+    @Test
+    public void testCheckHorizontal() {
+        Game game = new Game();
+        //X ชนะ
+//        game.addSymbol(0, 0); //x
+//        game.addSymbol(1, 1);  //o
+//        game.addSymbol(0, 1); //x
+//        game.addSymbol(2, 1); //o
+//        game.addSymbol(0, 2); //x
+
+        //0 ชนะ
+        game.addSymbol(0, 0); //x
+        game.addSymbol(1, 1);  //o
+        game.addSymbol(2, 0); //x
+        game.addSymbol(1, 0); //o
+        game.addSymbol(0, 1); //x
+        game.addSymbol(1, 2);
+
+        assertEquals(true, game.checkHorizontal());
     }
     
     @Test
@@ -115,6 +141,7 @@ public class GameTest {
       boolean actual = game.checkVertical(symbol);
       assertFalse(actual);
     }
+
     @Test
     public void addScore_case1_Xshouldbe1(){
       Game game = new Game();
@@ -155,5 +182,18 @@ public class GameTest {
       game.addScore('t');
       int tieScore = game.getTie();
       assertEquals(1, tieScore);
+    }
+
+    @Test
+    public void testPlayer1WinAndIncreaseScore() {
+        Game game = new Game();
+        //X ชนะ
+        game.addSymbol(0, 0); //x
+        game.addSymbol(1, 1);  //o
+        game.addSymbol(0, 1); //x
+        game.addSymbol(2, 1); //o
+        game.addSymbol(0, 2); //x
+        
+        assertEquals(1, game.player1.getScore());
     }
 }
