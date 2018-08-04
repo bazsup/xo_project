@@ -42,14 +42,14 @@ public class GameTest {
      */
     @Test
     public void testCheckDiagonal() {
-        System.out.println("checkDiagonal");
-        String symbol = "";
-        Game instance = new Game();
-        boolean expResult = false;
-        boolean result = instance.checkDiagonal(symbol);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Game g = new Game();
+    }
+    @Test
+    public void testAddSymbol(int row, int column){
+        Game g = new Game();
+        g.createBoard();
+        g.addSymbol(0, 0);
+        //assertEquals('x', g.getSymBolFromBoard(0, 0));
     }
     
 }

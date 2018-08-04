@@ -13,7 +13,7 @@ package model;
 public class Game {
 
     char board[][];
-    char currentPlayer;
+    char currentPlayer = 'x';
     
     Player player1;
     Player player2;
@@ -27,8 +27,21 @@ public class Game {
         }
         return result;
     }
+    
     public void createBoard(){
         board = new char[3][3];
+    }
+    
+    public boolean addSymbol(int row, int column){
+        boolean result = false;
+        if (board[row][column] == 0) {
+            board[row][column] = currentPlayer;
+            result = true;
+        }
+        return result;
+    }
+    public char getSymBolFromBoard(int row, int column){
+        return board[row][column];
     }
     
     public void checkHorizontal() {
