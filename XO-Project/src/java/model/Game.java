@@ -18,6 +18,14 @@ public class Game {
     char board[][];
     static char currentPlayer = 'x';
 
+    public static char getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public static void setCurrentPlayer(char currentPlayer) {
+        Game.currentPlayer = currentPlayer;
+    }
+
 
     public Game() {
         this.player1 = new Player();
@@ -76,6 +84,16 @@ public class Game {
         }
         else{
             this.player2.increaseScore();
+        }
+    }
+    
+    public void changePlayer() {
+        
+        if(this.currentPlayer == 'x'){
+            this.setCurrentPlayer('o');
+        }
+        else{
+            this.setCurrentPlayer('x');
         }
     }
     
