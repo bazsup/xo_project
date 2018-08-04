@@ -16,7 +16,7 @@ public class Game {
     
     // char พื้นฐานเป็น 0
     char board[][];
-    static char currentPlayer = 'x';
+    char currentPlayer = 'x';
 
 
     public Game() {
@@ -51,7 +51,7 @@ public class Game {
         return board[row][column];
     }
 
-    public void checkHorizontal() {
+    public boolean checkHorizontal() {
         boolean result = false;
         if ( board[0][0] == board[0][1] & board[0][1] ==board[0][2] ) {
             result = true;
@@ -60,17 +60,29 @@ public class Game {
         }else if( board[2][0] == board[2][1] & board[2][1] ==board[2][2]){
             result = true;
         }
+        return result;
+    }
+    public boolean checkVertical() {
+        boolean result = false;
+        if ( board[0][0] == board[1][0] & board[0][0] ==board[2][0] ) {
+            result = true;
+        }else if( board[0][1] == board[1][1] & board[0][1] ==board[2][1]){
+            result = true;
+        }else if( board[0][2] == board[1][2] & board[0][2] ==board[2][2]){
+            result = true;
+        }
+        return result;
     }
 
-    public static char getCurrentPlayer() {
+    public char getCurrentPlayer() {
         return currentPlayer;
     }
 
-    public static void setCurrentPlayer(char currentPlayer) {
-        Game.currentPlayer = currentPlayer;
+    public void setCurrentPlayer(char currentPlayer) {
+        this.currentPlayer = currentPlayer;
     }
 
-    public static void changePlayer() {
+    public void changePlayer() {
         if (currentPlayer == 'o') {
             setCurrentPlayer('x');
         } else {
