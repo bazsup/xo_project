@@ -14,3 +14,6 @@ build/
 dist/
 nbproject/
 src/conf
+
+private.properties
+nbproject

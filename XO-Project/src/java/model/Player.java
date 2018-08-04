@@ -10,5 +10,6 @@ package model;
  * @author wdrdr
  */
 public class Player {
-    
+    int score;
+   
 }
