@@ -38,9 +38,10 @@ public class PlayerTest {
     }
 
     @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testIncreaseScore() {
+        Player p = new Player();
+        p.increaseScore();
+        assertEquals(1, p.getScore());
     }
     
 }
