@@ -62,7 +62,7 @@ public class GameTest {
 //    }
 =======
     @Test
-    public void testAddSymbol(int row, int column) {
+    public void testAddSymbol() {
         Game g = new Game();
         g.addSymbol(0, 0);
         assertEquals('x', g.getSymBolFromBoard(0, 0));
