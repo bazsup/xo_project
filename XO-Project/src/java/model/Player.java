@@ -20,8 +20,9 @@ public class Player {
         this.score = score;
     }
     
-    public void increaseScore() {
-        this.score++;
+    public void increaseScore(){
+        score++;
+
     }
    
 }

@@ -46,14 +46,17 @@ public class GameTest {
     @Test
     public void testCheckDiagonal() {
         Game g = new Game();
+        g.addSymbol(0, 0);
+        g.addSymbol(1, 1);
+        g.addSymbol(2, 2);
+        assertEquals(true, g.checkDiagonal());
     }
 
     @Test
     public void testAddSymbol() {
         Game g = new Game();
-        g.createBoard();
         g.addSymbol(0, 0);
-        //assertEquals('x', g.getSymBolFromBoard(0, 0));
+        assertEquals('x', g.getSymBolFromBoard(0, 0));
     }
     
     @Test

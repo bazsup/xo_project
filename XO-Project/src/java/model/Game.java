@@ -13,17 +13,17 @@ public class Game {
 
     Player player1;
     Player player2;
-
-    // char พื้นฐานเป็น จ 
+    
+    // char พื้นฐานเป็น 0
     char board[][];
-    static char currentPlayer = 'x';
+    char currentPlayer = 'x';
 
-    public static char getCurrentPlayer() {
+    public char getCurrentPlayer() {
         return currentPlayer;
     }
 
-    public static void setCurrentPlayer(char currentPlayer) {
-        Game.currentPlayer = currentPlayer;
+    public void setCurrentPlayer(char currentPlayer) {
+        this.currentPlayer = currentPlayer;
     }
 
     public Game() {
