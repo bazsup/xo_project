@@ -7,6 +7,7 @@ package model;
 
 /**
  *
+<<<<<<< HEAD
  * @author bank2
  */
 public class Game {
@@ -29,4 +30,9 @@ public class Game {
     public void createBoard(){
         board = new char[3][3];
     }
+    
+    public void checkHorizontal() {
+        
+    }
+    
 }
