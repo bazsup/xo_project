@@ -34,7 +34,6 @@ public class GameTest {
 
     @Before
     public void setUp() {
-        this.newGame = new Game();
     }
 
     @After
@@ -59,7 +58,14 @@ public class GameTest {
     
     @Test
     public void testChangePlayer() {
-        assertEquals(true, true);
+        Game game = new Game();
+        assertEquals(game.currentPlayer, 'x');
+
+        game.changePlayer();
+        assertEquals(game.currentPlayer, 'o');
+        
+        game.changePlayer();
+        assertEquals(game.currentPlayer, 'x');
     }
     
 
