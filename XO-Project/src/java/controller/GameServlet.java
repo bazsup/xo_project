@@ -37,7 +37,7 @@ public class GameServlet extends HttpServlet {
         if(session.getAttribute("game") == null){
             session.setAttribute("game", new Game());
         }
-        
+        System.out.println("im here");
         Game game = (Game)session.getAttribute("game");
         
         if (input_row != null || input_col != null) {
@@ -50,16 +50,23 @@ public class GameServlet extends HttpServlet {
             } catch (Exception e) {
                 request.getSession().setAttribute("message", "กรุณาตอบใหม่ ");
             }
+            System.out.println("Hiii");
         }
-//        if (game.checkDiagonal() || game.checkHorizontal() || game.checkVertical()) {
-//            
-//        }
+        System.out.println(game.checkDiagonal() || game.checkHorizontal() || game.checkVertical());
+        if (game.checkDiagonal() || game.checkHorizontal() || game.checkVertical()){
+            System.out.println(game);
+            System.out.println(game.getCurrentPlayer());
+            System.out.println(game.getPlayer1());
+            game.addScore(game.getCurrentPlayer());
+            
+        }
         
         session.setAttribute("board", game.getBoard());
 
         
 
         request.getRequestDispatcher("/index.jsp").forward(request, response);
+//            response.sendRedirect("/index.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

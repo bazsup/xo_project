@@ -157,19 +157,19 @@ public class Game {
     }
 
 
-  public boolean checkVertical(char symbol) {
-    if(board[0][0] == symbol &&
-      board[1][0] == symbol &&
-      board[2][0] == symbol&& board[0][0] != 0
+  public boolean checkVertical() {
+    if(board[0][0] == currentPlayer &&
+      board[1][0] == currentPlayer &&
+      board[2][0] == currentPlayer && board[0][0] != 0
     ){
       return true;
-    } else if (board[0][1] == symbol &&
-      board[1][1] == symbol &&
-      board[2][1] == symbol&& board[0][1] != 0) {
+    } else if (board[0][1] == currentPlayer &&
+      board[1][1] == currentPlayer &&
+      board[2][1] == currentPlayer&& board[0][1] != 0) {
       return true;
-    } else if (board[0][2] == symbol &&
-      board[1][2] == symbol &&
-      board[2][2] == symbol&& board[0][2] != 0) {
+    } else if (board[0][2] == currentPlayer &&
+      board[1][2] == currentPlayer &&
+      board[2][2] == currentPlayer&& board[0][2] != 0) {
       return true;
     }
     return false;

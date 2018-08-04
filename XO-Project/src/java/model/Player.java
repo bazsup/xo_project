@@ -10,7 +10,7 @@ package model;
  * @author wdrdr
  */
 public class Player {
-    int score;
+    int score  = 90;
 
     public int getScore() {
         return score;
@@ -21,7 +21,7 @@ public class Player {
     }
     
     public void increaseScore(){
-        score++;
+        this.score++;
 
     }
     
