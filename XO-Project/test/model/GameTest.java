@@ -13,13 +13,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import model.Game;
+
 /**
  *
  * @author bank2
  */
 public class GameTest {
+
     Game newGame;
-    
 
     public GameTest() {
     }
@@ -58,7 +59,7 @@ public class GameTest {
         g.addSymbol(0, 0);
         assertEquals('x', g.getSymBolFromBoard(0, 0));
     }
-    
+
     @Test
     public void testChangePlayer() {
         Game game = new Game();
@@ -66,19 +67,43 @@ public class GameTest {
 
         game.changePlayer();
         assertEquals(game.currentPlayer, 'o');
-        
+
         game.changePlayer();
         assertEquals(game.currentPlayer, 'x');
     }
-    
+
     @Test
     public void testCheckHorizontal() {
         Game game = new Game();
+        //X ชนะ
+//        game.addSymbol(0, 0); //x
+//        game.addSymbol(1, 1);  //o
+//        game.addSymbol(0, 1); //x
+//        game.addSymbol(2, 1); //o
+//        game.addSymbol(0, 2); //x
+
+        //0 ชนะ
         game.addSymbol(0, 0); //x
-        game.addSymbol(0, 1);  //
-        game.addSymbol(0, 2);
-        game.addSymbol(0, 0);
+        game.addSymbol(1, 1);  //o
+        game.addSymbol(2, 0); //x
+        game.addSymbol(1, 0); //o
+        game.addSymbol(0, 1); //x
+        game.addSymbol(1, 2);
+
         assertEquals(true, game.checkHorizontal());
+    }
+
+    @Test
+    public void testPlayer1WinAndIncreaseScore() {
+        Game game = new Game();
+        //X ชนะ
+        game.addSymbol(0, 0); //x
+        game.addSymbol(1, 1);  //o
+        game.addSymbol(0, 1); //x
+        game.addSymbol(2, 1); //o
+        game.addSymbol(0, 2); //x
+        
+        assertEquals(1, game.player1.getScore());
     }
 
 }

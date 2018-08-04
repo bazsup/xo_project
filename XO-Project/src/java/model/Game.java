@@ -13,7 +13,7 @@ public class Game {
 
     Player player1;
     Player player2;
-    
+
     // char พื้นฐานเป็น 0
     char board[][];
     char currentPlayer = 'x';
@@ -47,11 +47,13 @@ public class Game {
     }
 
     public boolean addSymbol(int row, int column) {
+        System.out.println(currentPlayer);
         boolean result = false;
         if (board[row][column] == 0) {
             board[row][column] = currentPlayer;
             result = true;
         }
+        // ต้องนำมาเช็คก่อนเพื่อเพิ่มคะแนนให้แก่ผู้เล่นตรงนี้ในระบบ ก่อนที่จะเปลีย่นผู้เล่น !!!
         changePlayer();
         return result;
     }
@@ -72,6 +74,7 @@ public class Game {
 
         //ถ้าชนะจะบวกคะแนนให้ผู้เล่นคนนั้น
         if (result == true) {
+            System.out.println("I'm " + currentPlayer + " Win !!!");
             addScoreToPlayerWhoWin();
             //ชนะเพิ่มคะแนนจบแล้วก็ล้าง
             createBoard();
@@ -98,7 +101,14 @@ public class Game {
 
     // Servelet
     public static void main(String[] args) {
-
+        Game game = new Game();
+        //X ชนะ
+        game.addSymbol(0, 0); //x
+        game.addSymbol(1, 1);  //o
+        game.addSymbol(0, 1); //x
+        game.addSymbol(2, 1); //o
+        game.addSymbol(0, 2); //x
+        game.checkHorizontal();
     }
 
 }
