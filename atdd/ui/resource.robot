@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Suite Teardown    Close Browser
+# Suite Teardown    Close Browser
 
 *** Variables ***
 ${URL}         http://localhost:8080/XO-Project/index.jsp
