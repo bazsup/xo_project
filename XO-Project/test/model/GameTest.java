@@ -115,5 +115,45 @@ public class GameTest {
       boolean actual = game.checkVertical(symbol);
       assertFalse(actual);
     }
-
+    @Test
+    public void addScore_case1_Xshouldbe1(){
+      Game game = new Game();
+      game.addScore('x');
+      int p1score = game.getPlayer1().getScore();
+      assertEquals(1, p1score);
+    }
+    
+    @Test
+    public void addScore_case2_Xshouldbe2(){
+      Game game = new Game();
+      game.getPlayer1().setScore(1);
+      game.addScore('x');
+      int p1score = game.getPlayer1().getScore();
+      assertEquals(2, p1score);
+    }
+    
+    @Test
+    public void addScore_case3_Oshouldbe1(){
+      Game game = new Game();
+      game.addScore('o');
+      int p2score = game.getPlayer2().getScore();
+      assertEquals(1, p2score);
+    }
+    
+    @Test
+    public void addScore_case4_Oshouldbe2(){
+      Game game = new Game();
+      game.getPlayer2().setScore(1);
+      game.addScore('o');
+      int p2score = game.getPlayer2().getScore();
+      assertEquals(2, p2score);
+    }
+    
+    @Test
+    public void addScore_case5_TieShouldbe1(){
+      Game game = new Game();
+      game.addScore('t');
+      int tieScore = game.getTie();
+      assertEquals(1, tieScore);
+    }
 }
