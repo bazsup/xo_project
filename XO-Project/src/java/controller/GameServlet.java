@@ -59,7 +59,11 @@ public class GameServlet extends HttpServlet {
             System.out.println(game.getPlayer1());
             game.addScore(game.getCurrentPlayer());
             
+        }else if (game.isFully(game.getBoard())) {
+            game.addScore('t');
+            game.createBoard();
         }
+
         
         session.setAttribute("board", game.getBoard());
 

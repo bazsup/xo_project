@@ -10,7 +10,7 @@ package model;
  * @author wdrdr
  */
 public class Player {
-    int score  = 90;
+    int score  = 0;
 
     public int getScore() {
         return score;
