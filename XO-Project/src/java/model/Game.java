@@ -89,6 +89,14 @@ public class Game {
       board[2][0] == symbol
     ){
       return true;
+    } else if (board[0][1] == symbol &&
+      board[1][1] == symbol &&
+      board[2][1] == symbol) {
+      return true;
+    } else if (board[0][2] == symbol &&
+      board[1][2] == symbol &&
+      board[2][2] == symbol) {
+      return true;
     }
     return false;
   }

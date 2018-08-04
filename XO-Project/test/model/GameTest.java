@@ -65,11 +65,32 @@ public class GameTest {
 
     @Test
     public void checkSymbolVertical_column1_shouldbeTrue() {
-      
       Game game = new Game();
       game.addSymbol(0, 0);
       game.addSymbol(1, 0);
       game.addSymbol(2, 0);
+      char symbol = game.getCurrentPlayer();
+      boolean actual = game.checkVertical(symbol);
+      assertTrue(actual);
+    }
+    
+    @Test
+    public void checkSymbolVertical_column2_shouldbeTrue() {
+      Game game = new Game();
+      game.addSymbol(0, 1);
+      game.addSymbol(1, 1);
+      game.addSymbol(2, 1);
+      char symbol = game.getCurrentPlayer();
+      boolean actual = game.checkVertical(symbol);
+      assertTrue(actual);
+    }
+    
+    @Test
+    public void checkSymbolVertical_column3_shouldbeTrue() {
+      Game game = new Game();
+      game.addSymbol(0, 2);
+      game.addSymbol(1, 2);
+      game.addSymbol(2, 2);
       char symbol = game.getCurrentPlayer();
       boolean actual = game.checkVertical(symbol);
       assertTrue(actual);
