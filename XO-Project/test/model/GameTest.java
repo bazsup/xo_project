@@ -95,5 +95,16 @@ public class GameTest {
       boolean actual = game.checkVertical(symbol);
       assertTrue(actual);
     }
+    
+    @Test
+    public void checkSymbolVertical_case4_shouldbeFalse() {
+      Game game = new Game();
+      game.addSymbol(0, 2);
+      game.addSymbol(1, 0);
+      game.addSymbol(1, 1);
+      char symbol = game.getCurrentPlayer();
+      boolean actual = game.checkVertical(symbol);
+      assertFalse(actual);
+    }
 
 }
