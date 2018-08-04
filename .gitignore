@@ -3,15 +3,18 @@
 *.iws
 *.iml
 *.ipr
+**.class
 
 **/log.html
 **/output.xml
 **/report.html
 **.png
+XO-Project.war
 
-**/build/**
+build/
+dist/
+nbproject/
+src/conf
 
 private.properties
 nbproject
-
-XO-Project/build
