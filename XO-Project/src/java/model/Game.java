@@ -51,7 +51,7 @@ public class Game {
         return board[row][column];
     }
 
-    public void checkHorizontal() {
+    public boolean checkHorizontal() {
         boolean result = false;
         if ( board[0][0] == board[0][1] & board[0][1] ==board[0][2] ) {
             result = true;
@@ -60,24 +60,23 @@ public class Game {
         }else if( board[2][0] == board[2][1] & board[2][1] ==board[2][2]){
             result = true;
         }
+        
+        //ถ้าชนะจะบวกคะแนนให้ผู้เล่นคนนั้น
+        if(result == true){
+            addScoreToPlayerWhoWin();
+        }
+        return result;
     }
-
-    public static char getCurrentPlayer() {
-        return currentPlayer;
-    }
-
-    public static void setCurrentPlayer(char currentPlayer) {
-        Game.currentPlayer = currentPlayer;
-    }
-
-    public static void changePlayer() {
-        if (currentPlayer == 'o') {
-            setCurrentPlayer('x');
-        } else {
-            setCurrentPlayer('o');
+    
+    public void addScoreToPlayerWhoWin() {
+        if(this.currentPlayer == 'x'){
+            this.player1.increaseScore();
+        }
+        else{
+            this.player2.increaseScore();
         }
     }
-
+    
     // Servelet
     public static void main(String[] args) {
 
