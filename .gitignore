@@ -13,3 +13,4 @@ XO-Project.war
 build/
 dist/
 nbproject/
+src/conf
