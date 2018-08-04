@@ -15,6 +15,16 @@ public class Game {
     Player player2;
     int tie = 0;
 
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    public Player getPlayer2() {
+        return player2;
+    }
+    
+    
+
     public int getTie() {
         return tie;
     }

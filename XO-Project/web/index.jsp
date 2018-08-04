@@ -50,17 +50,17 @@
     <div class="row">
         <div class="col text-center">
             <p>Player1 (X) Score</p>
-            <p id="player1Score" class="mt-3">0</p>
+            <p id="player1Score" class="mt-3">${game.getPlayer1().getScore()}</p>
 
         </div>
         <div class="col text-center">
             <p>Tie Score</p>
-            <p id="tieScore" class="mt-3">0</p>
+            <p id="tieScore" class="mt-3">${game.getTie()}</p>
 
         </div>
         <div class="col text-center">
             <p>Player2 (O) Score</p>
-            <p id="player2Score" class="mt-3">0</p>
+            <p id="player2Score" class="mt-3">${game.getPlayer2().getScore()}</p>
 
         </div>
     </div>
