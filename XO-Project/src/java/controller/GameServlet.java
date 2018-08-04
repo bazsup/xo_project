@@ -38,18 +38,25 @@ public class GameServlet extends HttpServlet {
             session.setAttribute("game", new Game());
         }
         
-        Game start = (Game) session.getAttribute("game");
-
+        Game game = (Game)session.getAttribute("game");
+        
         if (input_row != null || input_col != null) {
             try {
             int row = Integer.parseInt(input_row);
             int col = Integer.parseInt(input_col);
             request.getSession().setAttribute("message", "row : "+row+" column : "+col);
+            game.addSymbol(row, col);
+
             } catch (Exception e) {
                 request.getSession().setAttribute("message", "กรุณาตอบใหม่ ");
             }
         }
+//        if (game.checkDiagonal() || game.checkHorizontal() || game.checkVertical()) {
+//            
+//        }
         
+        session.setAttribute("board", game.getBoard());
+
         
 
         request.getRequestDispatcher("/index.jsp").forward(request, response);

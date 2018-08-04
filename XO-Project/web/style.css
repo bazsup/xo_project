@@ -2,6 +2,12 @@ body {
     background: #000;
     color: #fff;
 }
+a {
+    width: 100%;
+    height: 70%;
+    background: black;
+    display: inline-block;
+}
 .myTable td {
     vertical-align: middle;
     border: 1px solid #fff;

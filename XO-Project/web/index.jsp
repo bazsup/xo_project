@@ -4,6 +4,7 @@
     Author     : Bazsup
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -29,21 +30,16 @@
     <div class="row my-5">
         <div class="col d-flex justify-content-center">
             <table class="text-center myTable">
-                <tr>
-                    <td id="R1_C1"></td>
-                    <td id="R1_C2"></td>
-                    <td id="R1_C3"></td>
-                </tr>
-                <tr>
-                    <td id="R2_C1"></td>
-                    <td id="R2_C2"></td>
-                    <td id="R2_C3"></td>
-                </tr>
-                <tr>
-                    <td id="R3_C1"></td>
-                    <td id="R3_C2"></td>
-                    <td id="R3_C3"></td>
-                </tr>
+                <c:forEach items="${board}" var = "row" varStatus="vsrow">
+                    
+                    <tr>
+                        <c:forEach items="${row}" var = "column" varStatus="vscol">
+                            <td>
+                                <a href="Game?row=${vsrow.index}&col=${vscol.index}" id="R${vsrow.index}_C${vscol.index}">${column}</a>
+                            </td>
+                        </c:forEach>
+                    </tr>
+                </c:forEach>
             </table>
         </div>
     </div>

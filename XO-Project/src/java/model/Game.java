@@ -22,6 +22,14 @@ public class Game {
     public Player getPlayer2() {
         return player2;
     }
+
+    public char[][] getBoard() {
+        return board;
+    }
+
+    public void setBoard(char[][] board) {
+        this.board = board;
+    }
     
     
 
@@ -76,9 +84,9 @@ public class Game {
 
     public boolean checkDiagonal() {
         boolean result = false;
-        if (board[0][0] == board[1][1] && board[0][0] == board[2][2]) {
+        if (board[0][0] == board[1][1] && board[0][0] == board[2][2]&& board[0][0] != 0) {
             result = true;
-        } else if ((board[0][2] == board[1][1] && board[0][2] == board[2][0])) {
+        } else if ((board[0][2] == board[1][1] && board[0][2] == board[2][0]&& board[0][2] != 0)) {
             result = true;
         }
         return result;
@@ -98,11 +106,11 @@ public class Game {
 
     public boolean checkHorizontal() {
         boolean result = false;
-        if ( board[0][0] == board[0][1] & board[0][1] ==board[0][2] ) {
+        if ( board[0][0] == board[0][1] & board[0][1] ==board[0][2] && board[0][0] != 0 ) {
             result = true;
-        }else if( board[1][0] == board[1][1] & board[1][1] ==board[1][2]){
+        }else if( board[1][0] == board[1][1] & board[1][1] ==board[1][2]&& board[1][0] != 0){
             result = true;
-        }else if( board[2][0] == board[2][1] & board[2][1] ==board[2][2]){
+        }else if( board[2][0] == board[2][1] & board[2][1] ==board[2][2]&& board[2][0] != 0){
             result = true;
         }
         return result;
@@ -120,16 +128,16 @@ public class Game {
   public boolean checkVertical(char symbol) {
     if(board[0][0] == symbol &&
       board[1][0] == symbol &&
-      board[2][0] == symbol
+      board[2][0] == symbol&& board[0][0] != 0
     ){
       return true;
     } else if (board[0][1] == symbol &&
       board[1][1] == symbol &&
-      board[2][1] == symbol) {
+      board[2][1] == symbol&& board[0][1] != 0) {
       return true;
     } else if (board[0][2] == symbol &&
       board[1][2] == symbol &&
-      board[2][2] == symbol) {
+      board[2][2] == symbol&& board[0][2] != 0) {
       return true;
     }
     return false;
