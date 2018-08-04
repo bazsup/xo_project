@@ -26,7 +26,6 @@ public class Game {
         Game.currentPlayer = currentPlayer;
     }
 
-
     public Game() {
         this.player1 = new Player();
         this.player2 = new Player();
@@ -47,56 +46,56 @@ public class Game {
         return result;
     }
 
-    public boolean addSymbol(int row, int column){
+    public boolean addSymbol(int row, int column) {
         boolean result = false;
         if (board[row][column] == 0) {
             board[row][column] = currentPlayer;
             result = true;
         }
+        changePlayer();
         return result;
     }
-    public char getSymBolFromBoard(int row, int column){
+
+    public char getSymBolFromBoard(int row, int column) {
         return board[row][column];
     }
 
     public boolean checkHorizontal() {
         boolean result = false;
-        if ( board[0][0] == board[0][1] & board[0][1] ==board[0][2] ) {
+        if (board[0][0] == board[0][1] & board[0][1] == board[0][2]) {
             result = true;
-        }else if( board[1][0] == board[1][1] & board[1][1] ==board[1][2]){
+        } else if (board[1][0] == board[1][1] & board[1][1] == board[1][2]) {
             result = true;
-        }else if( board[2][0] == board[2][1] & board[2][1] ==board[2][2]){
+        } else if (board[2][0] == board[2][1] & board[2][1] == board[2][2]) {
             result = true;
         }
-        
+
         //ถ้าชนะจะบวกคะแนนให้ผู้เล่นคนนั้น
-        if(result == true){
+        if (result == true) {
             addScoreToPlayerWhoWin();
+            //ชนะเพิ่มคะแนนจบแล้วก็ล้าง
+            createBoard();
         }
-        //ชนะเพิ่มคะแนนจบแล้วก็ล้าง
-        createBoard();
         return result;
     }
-    
+
     public void addScoreToPlayerWhoWin() {
-        if(this.currentPlayer == 'x'){
+        if (this.currentPlayer == 'x') {
             this.player1.increaseScore();
-        }
-        else{
+        } else {
             this.player2.increaseScore();
         }
     }
-    
+
     public void changePlayer() {
-        
-        if(this.currentPlayer == 'x'){
+
+        if (this.currentPlayer == 'x') {
             this.setCurrentPlayer('o');
-        }
-        else{
+        } else {
             this.setCurrentPlayer('x');
         }
     }
-    
+
     // Servelet
     public static void main(String[] args) {
 
