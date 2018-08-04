@@ -52,22 +52,12 @@ public class GameTest {
         assertEquals(true, g.checkDiagonal());
     }
 
-<<<<<<< HEAD
-//    @Test
-//    public void testAddSymbol(int row, int column) {
-//        Game g = new Game();
-//        g.createBoard();
-//        g.addSymbol(0, 0);
-//        //assertEquals('x', g.getSymBolFromBoard(0, 0));
-//    }
-=======
     @Test
     public void testAddSymbol() {
         Game g = new Game();
         g.addSymbol(0, 0);
         assertEquals('x', g.getSymBolFromBoard(0, 0));
     }
->>>>>>> d551d5f676aa5b7b467a1852f258e78c15a6ade7
     
     @Test
     public void testChangePlayer() {
