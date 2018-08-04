@@ -44,11 +44,18 @@ public class GameTest {
      * Test of checkDiagonal method, of class Game.
      */
     @Test
-    public void testCheckDiagonal() {
+    public void testCheckDiagonalLeftToRight() {
         Game g = new Game();
         g.addSymbol(0, 0);
         g.addSymbol(1, 1);
         g.addSymbol(2, 2);
+        assertEquals(true, g.checkDiagonal());
+    }
+    public void testCheckDiagonalRightToLeft() {
+        Game g = new Game();
+        g.addSymbol(0, 2);
+        g.addSymbol(1, 1);
+        g.addSymbol(2, 0);
         assertEquals(true, g.checkDiagonal());
     }
 
