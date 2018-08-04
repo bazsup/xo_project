@@ -13,7 +13,19 @@ public class Game {
 
     Player player1;
     Player player2;
+    int tie = 0;
+
+    public int getTie() {
+        return tie;
+    }
+
+    public void setTie(int tie) {
+        this.tie = tie;
+    }
     
+    public void resetScoreTie(){
+        this.tie = 0;
+    }
     // char พื้นฐานเป็น 0
     char board[][];
     char currentPlayer = 'x';
@@ -31,6 +43,21 @@ public class Game {
         this.player1 = new Player();
         this.player2 = new Player();
         createBoard();
+    }
+    
+    public boolean isFully(char board[][]){
+        for (int row = 0; row <3 ; row++) {
+            for (int col = 0; col < 3; col++) {
+                if(board[row][col]==0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    public void resetScore(){
+        
     }
 
     public void createBoard() {
