@@ -16,7 +16,7 @@ public class Game {
 
     // char พื้นฐานเป็น จ 
     char board[][];
-    char currentPlayer = 'x';
+    static char currentPlayer = 'x';
 
 
     public Game() {
