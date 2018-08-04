@@ -17,22 +17,22 @@ import static org.junit.Assert.*;
  * @author bank2
  */
 public class GameTest {
-    
+
     public GameTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -44,12 +44,17 @@ public class GameTest {
     public void testCheckDiagonal() {
         Game g = new Game();
     }
+
     @Test
-    public void testAddSymbol(int row, int column){
+    public void testAddSymbol(int row, int column) {
         Game g = new Game();
         g.createBoard();
         g.addSymbol(0, 0);
         //assertEquals('x', g.getSymBolFromBoard(0, 0));
     }
-    
+
+    public void testCheckHorizontal() {
+
+    }
+
 }
