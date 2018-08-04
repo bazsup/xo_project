@@ -1,3 +1,9 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
 **/log.html
 **/output.xml
 **/report.html
