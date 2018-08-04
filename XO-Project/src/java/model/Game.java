@@ -13,11 +13,11 @@ public class Game {
 
     Player player1;
     Player player2;
-    
+
     // char พื้นฐานเป็น จ 
     char board[][];
     char currentPlayer = 'x';
-    
+
 
     public Game() {
         this.player1 = new Player();
@@ -38,7 +38,7 @@ public class Game {
         }
         return result;
     }
-    
+
     public boolean addSymbol(int row, int column){
         boolean result = false;
         if (board[row][column] == 0) {
@@ -59,6 +59,22 @@ public class Game {
             result = true;
         }else if( board[2][0] == board[2][1] & board[2][1] ==board[2][2]){
             result = true;
+        }
+    }
+
+    public static char getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public static void setCurrentPlayer(char currentPlayer) {
+        Game.currentPlayer = currentPlayer;
+    }
+
+    public static void changePlayer() {
+        if (currentPlayer == 'o') {
+            setCurrentPlayer('x');
+        } else {
+            setCurrentPlayer('o');
         }
     }
 
