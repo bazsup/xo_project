@@ -49,13 +49,13 @@ public class GameTest {
         Game g = new Game();
     }
 
-    @Test
-    public void testAddSymbol(int row, int column) {
-        Game g = new Game();
-        g.createBoard();
-        g.addSymbol(0, 0);
-        //assertEquals('x', g.getSymBolFromBoard(0, 0));
-    }
+//    @Test
+//    public void testAddSymbol(int row, int column) {
+//        Game g = new Game();
+//        g.createBoard();
+//        g.addSymbol(0, 0);
+//        //assertEquals('x', g.getSymBolFromBoard(0, 0));
+//    }
     
     @Test
     public void testChangePlayer() {
@@ -63,8 +63,16 @@ public class GameTest {
     }
     
 
-    public void testCheckHorizontal() {
-
+    @Test
+    public void checkSymbolVertical_column1_shouldbeTrue() {
+      
+      Game game = new Game();
+      game.addSymbol(0, 0);
+      game.addSymbol(1, 0);
+      game.addSymbol(2, 0);
+      char symbol = game.getCurrentPlayer();
+      boolean actual = game.checkVertical(symbol);
+      assertTrue(actual);
     }
 
 }

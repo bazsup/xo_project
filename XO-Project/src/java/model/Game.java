@@ -16,7 +16,7 @@ public class Game {
 
     // char พื้นฐานเป็น จ 
     char board[][];
-    static char currentPlayer = 'x';
+    char currentPlayer = 'x';
 
 
     public Game() {
@@ -62,15 +62,15 @@ public class Game {
         }
     }
 
-    public static char getCurrentPlayer() {
+    public char getCurrentPlayer() {
         return currentPlayer;
     }
 
-    public static void setCurrentPlayer(char currentPlayer) {
-        Game.currentPlayer = currentPlayer;
+    public void setCurrentPlayer(char currentPlayer) {
+        this.currentPlayer = currentPlayer;
     }
 
-    public static void changePlayer() {
+    public void changePlayer() {
         if (currentPlayer == 'o') {
             setCurrentPlayer('x');
         } else {
@@ -78,9 +78,19 @@ public class Game {
         }
     }
 
-    // Servelet
-    public static void main(String[] args) {
+  // Servelet
+  public static void main(String[] args) {
 
+  }
+
+  public boolean checkVertical(char symbol) {
+    if(board[0][0] == symbol &&
+      board[1][0] == symbol &&
+      board[2][0] == symbol
+    ){
+      return true;
     }
+    return false;
+  }
 
 }
