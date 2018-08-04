@@ -20,22 +20,23 @@ import model.Game;
 public class GameTest {
     Game newGame;
     
+
     public GameTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
         this.newGame = new Game();
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -47,8 +48,9 @@ public class GameTest {
     public void testCheckDiagonal() {
         Game g = new Game();
     }
+
     @Test
-    public void testAddSymbol(int row, int column){
+    public void testAddSymbol(int row, int column) {
         Game g = new Game();
         g.createBoard();
         g.addSymbol(0, 0);
@@ -60,4 +62,9 @@ public class GameTest {
         assertEquals(true, true);
     }
     
+
+    public void testCheckHorizontal() {
+
+    }
+
 }
