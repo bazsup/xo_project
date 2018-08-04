@@ -50,7 +50,7 @@ public class GameTest {
     }
 
     @Test
-    public void testAddSymbol(int row, int column) {
+    public void testAddSymbol() {
         Game g = new Game();
         g.createBoard();
         g.addSymbol(0, 0);
@@ -62,9 +62,14 @@ public class GameTest {
         assertEquals(true, true);
     }
     
-
+    @Test
     public void testCheckHorizontal() {
-
+        Game game = new Game();
+        game.addSymbol(0, 0); //x
+        game.addSymbol(0, 1);  //
+        game.addSymbol(0, 2);
+        game.addSymbol(0, 0);
+        assertEquals(true, game.checkHorizontal());
     }
 
 }

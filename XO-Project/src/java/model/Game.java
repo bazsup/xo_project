@@ -65,6 +65,8 @@ public class Game {
         if(result == true){
             addScoreToPlayerWhoWin();
         }
+        //ชนะเพิ่มคะแนนจบแล้วก็ล้าง
+        createBoard();
         return result;
     }
     
