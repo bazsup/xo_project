@@ -8,3 +8,10 @@
 **/output.xml
 **/report.html
 **.png
+
+**/build/**
+
+private.properties
+nbproject
+
+XO-Project/build
