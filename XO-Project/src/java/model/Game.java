@@ -147,21 +147,23 @@ public class Game {
     }
 
 
-  public boolean checkVertical(char symbol) {
-    if(board[0][0] == symbol &&
-      board[1][0] == symbol &&
-      board[2][0] == symbol
+  public boolean checkVertical() {
+    if(board[0][0] == this.currentPlayer &&
+      board[1][0] == this.currentPlayer &&
+      board[2][0] == this.currentPlayer
     ){
       return true;
-    } else if (board[0][1] == symbol &&
-      board[1][1] == symbol &&
-      board[2][1] == symbol) {
+    } else if (board[0][1] == this.currentPlayer &&
+      board[1][1] == this.currentPlayer &&
+      board[2][1] == this.currentPlayer) {
       return true;
-    } else if (board[0][2] == symbol &&
-      board[1][2] == symbol &&
-      board[2][2] == symbol) {
+    } else if (board[0][2] == this.currentPlayer &&
+      board[1][2] == this.currentPlayer &&
+      board[2][2] == this.currentPlayer) {
       return true;
-
+    }
+    return false;
+  }
     // Servelet
     public static void main(String[] args) {
         Game game = new Game();
@@ -173,8 +175,6 @@ public class Game {
         game.addSymbol(0, 2); //x
         game.checkHorizontal();
     }
-    return false;
-  }
 
   public void addScore(char c) {
     switch(c) {

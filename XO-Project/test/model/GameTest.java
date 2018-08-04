@@ -86,8 +86,9 @@ public class GameTest {
       game.addSymbol(1, 0);
       game.addSymbol(2, 0);
       char symbol = game.getCurrentPlayer();
-      boolean actual = game.checkVertical(symbol);
+      boolean actual = game.checkVertical();
       assertTrue(actual);
+    }
     @Test
     public void testCheckHorizontal() {
         Game game = new Game();
@@ -116,7 +117,7 @@ public class GameTest {
       game.addSymbol(1, 1);
       game.addSymbol(2, 1);
       char symbol = game.getCurrentPlayer();
-      boolean actual = game.checkVertical(symbol);
+      boolean actual = game.checkVertical();
       assertTrue(actual);
     }
     
@@ -127,7 +128,7 @@ public class GameTest {
       game.addSymbol(1, 2);
       game.addSymbol(2, 2);
       char symbol = game.getCurrentPlayer();
-      boolean actual = game.checkVertical(symbol);
+      boolean actual = game.checkVertical();
       assertTrue(actual);
     }
     
@@ -138,7 +139,7 @@ public class GameTest {
       game.addSymbol(1, 0);
       game.addSymbol(1, 1);
       char symbol = game.getCurrentPlayer();
-      boolean actual = game.checkVertical(symbol);
+      boolean actual = game.checkVertical();
       assertFalse(actual);
     }
 
@@ -194,6 +195,6 @@ public class GameTest {
         game.addSymbol(2, 1); //o
         game.addSymbol(0, 2); //x
         
-        assertEquals(1, game.player1.getScore());
+        assertEquals(1, game.getPlayer1().getScore());
     }
 }
