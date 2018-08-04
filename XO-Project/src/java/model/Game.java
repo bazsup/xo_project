@@ -14,7 +14,7 @@ public class Game {
     Player player1;
     Player player2;
     
-    // char พื้นฐานเป็น จ 
+    // char พื้นฐานเป็น 0
     char board[][];
     char currentPlayer = 'x';
     
