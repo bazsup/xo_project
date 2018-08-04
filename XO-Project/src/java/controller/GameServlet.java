@@ -31,10 +31,12 @@ public class GameServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String input_row = request.getParameter("Row");
-        String input_col = request.getParameter("Col");
+        String input_row = request.getParameter("row");
+        String input_col = request.getParameter("col");
         HttpSession session = request.getSession(true);
-        session.setAttribute("game", new Game());
+        if(session.getAttribute("game") == null){
+            session.setAttribute("game", new Game());
+        }
         
         Game start = (Game) session.getAttribute("game");
 
