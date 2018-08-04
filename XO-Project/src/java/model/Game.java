@@ -111,7 +111,7 @@ public class Game {
             result = true;
         }
         // ต้องนำมาเช็คก่อนเพื่อเพิ่มคะแนนให้แก่ผู้เล่นตรงนี้ในระบบ ก่อนที่จะเปลีย่นผู้เล่น !!!
-        changePlayer();
+//        changePlayer();
         return result;
     }
 

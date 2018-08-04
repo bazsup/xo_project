@@ -185,16 +185,4 @@ public class GameTest {
       assertEquals(1, tieScore);
     }
 
-    @Test
-    public void testPlayer1WinAndIncreaseScore() {
-        Game game = new Game();
-        //X ชนะ
-        game.addSymbol(0, 0); //x
-        game.addSymbol(1, 1);  //o
-        game.addSymbol(0, 1); //x
-        game.addSymbol(2, 1); //o
-        game.addSymbol(0, 2); //x
-        
-        assertEquals(1, game.getPlayer1().getScore());
-    }
 }
