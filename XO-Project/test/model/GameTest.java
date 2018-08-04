@@ -12,11 +12,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import model.Game;
 /**
  *
  * @author bank2
  */
 public class GameTest {
+    Game newGame;
     
     public GameTest() {
     }
@@ -31,6 +33,7 @@ public class GameTest {
     
     @Before
     public void setUp() {
+        this.newGame = new Game();
     }
     
     @After
@@ -50,6 +53,11 @@ public class GameTest {
         g.createBoard();
         g.addSymbol(0, 0);
         //assertEquals('x', g.getSymBolFromBoard(0, 0));
+    }
+    
+    @Test
+    public void testChangePlayer() {
+        assertEquals(true, true);
     }
     
 }
