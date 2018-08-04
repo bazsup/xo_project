@@ -34,7 +34,6 @@ public class GameTest {
 
     @Before
     public void setUp() {
-        this.newGame = new Game();
     }
 
     @After
@@ -47,8 +46,13 @@ public class GameTest {
     @Test
     public void testCheckDiagonal() {
         Game g = new Game();
+        g.addSymbol(0, 0);
+        g.addSymbol(1, 1);
+        g.addSymbol(2, 2);
+        assertEquals(true, g.checkDiagonal());
     }
 
+<<<<<<< HEAD
 //    @Test
 //    public void testAddSymbol(int row, int column) {
 //        Game g = new Game();
@@ -56,10 +60,25 @@ public class GameTest {
 //        g.addSymbol(0, 0);
 //        //assertEquals('x', g.getSymBolFromBoard(0, 0));
 //    }
+=======
+    @Test
+    public void testAddSymbol(int row, int column) {
+        Game g = new Game();
+        g.addSymbol(0, 0);
+        assertEquals('x', g.getSymBolFromBoard(0, 0));
+    }
+>>>>>>> d551d5f676aa5b7b467a1852f258e78c15a6ade7
     
     @Test
     public void testChangePlayer() {
-        assertEquals(true, true);
+        Game game = new Game();
+        assertEquals(game.currentPlayer, 'x');
+
+        game.changePlayer();
+        assertEquals(game.currentPlayer, 'o');
+        
+        game.changePlayer();
+        assertEquals(game.currentPlayer, 'x');
     }
     
 

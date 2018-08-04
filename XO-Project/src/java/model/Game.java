@@ -13,10 +13,18 @@ public class Game {
 
     Player player1;
     Player player2;
-
-    // char พื้นฐานเป็น จ 
+    
+    // char พื้นฐานเป็น 0
     char board[][];
     char currentPlayer = 'x';
+
+    public char getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(char currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
 
 
     public Game() {
@@ -51,7 +59,7 @@ public class Game {
         return board[row][column];
     }
 
-    public void checkHorizontal() {
+    public boolean checkHorizontal() {
         boolean result = false;
         if ( board[0][0] == board[0][1] & board[0][1] ==board[0][2] ) {
             result = true;
@@ -60,14 +68,7 @@ public class Game {
         }else if( board[2][0] == board[2][1] & board[2][1] ==board[2][2]){
             result = true;
         }
-    }
-
-    public char getCurrentPlayer() {
-        return currentPlayer;
-    }
-
-    public void setCurrentPlayer(char currentPlayer) {
-        this.currentPlayer = currentPlayer;
+        return result;
     }
 
     public void changePlayer() {
@@ -78,10 +79,6 @@ public class Game {
         }
     }
 
-  // Servelet
-  public static void main(String[] args) {
-
-  }
 
   public boolean checkVertical(char symbol) {
     if(board[0][0] == symbol &&
